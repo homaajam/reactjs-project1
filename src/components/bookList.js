@@ -1,4 +1,4 @@
-
+import BookShelf from "./bookShelf";
 
 const book =[
   {
@@ -30,7 +30,7 @@ const book =[
     shelf: "read",
   },
 ];
-const BookList=()=>{
+const BookList=(books)=>{
 
   return(
     <div className="list-books">
@@ -38,7 +38,15 @@ const BookList=()=>{
         <h1>MyReads</h1>
       </div>
       <div className="list-books-content">
-        
+        <BookShelf title={"Currently Reading"} books={
+          books.filter((book)=> book.shelf === "Currently Readin")}
+        />
+        <BookShelf title={"Want to Read"} books={
+          books.filter((book)=> book.shelf === "Want to Read")}
+        />
+        <BookShelf title={"read"} books={
+          books.filter((book)=> book.shelf === "read")}
+        />
       </div>
       <div className="open-search">
         <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
