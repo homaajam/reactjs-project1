@@ -6,7 +6,7 @@ const book =[
     title: "To Kill a Mockingbird",
     author: "Harper Lee",
     image: "http://books.google.com/books/content?id=yDtCuFHXbAYC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72RRiTR6U5OUg3IY_LpHTL2NztVWAuZYNFE8dUuC0VlYabeyegLzpAnDPeWxE6RHi0C2ehrR9Gv20LH2dtjpbcUcs8YnH5VCCAH0Y2ICaKOTvrZTCObQbsfp4UbDqQyGISCZfGN&source=gbs_api",
-    shelf: "Currently Reading"
+    shelf: "Currently Reading",
   },
   {
     id: 2,
@@ -30,3 +30,19 @@ const book =[
     shelf: "read",
   },
 ];
+const BookList=()=>{
+
+  return(
+    <div className="list-books">
+      <div className="list-books-title">
+        <h1>MyReads</h1>
+      </div>
+      <div className="list-books-content">
+        
+      </div>
+      <div className="open-search">
+        <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
+      </div>
+    </div>
+  )
+}
