@@ -1,4 +1,5 @@
 import BookShelf from "./bookShelf";
+import {link} from "react-router-dom";
 
 const book =[
   {
@@ -39,7 +40,7 @@ const BookList=(books)=>{
       </div>
       <div className="list-books-content">
         <BookShelf title={"Currently Reading"} books={
-          books.filter((book)=> book.shelf === "Currently Readin")}
+          books.filter((book)=> book.shelf === "Currently Reading")}
         />
         <BookShelf title={"Want to Read"} books={
           books.filter((book)=> book.shelf === "Want to Read")}
@@ -49,7 +50,7 @@ const BookList=(books)=>{
         />
       </div>
       <div className="open-search">
-        <a onClick={() => setShowSearchpage(!showSearchPage)}>Add a book</a>
+        <link to="/search">Add a book</link>
       </div>
     </div>
   )
