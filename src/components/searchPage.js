@@ -1,5 +1,5 @@
 
-import SearchPage= () => {
+const SearchPage= () => {
 
   return (
         <div className="search-books">
