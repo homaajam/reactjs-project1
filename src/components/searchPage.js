@@ -1,25 +1,34 @@
 import {link} from "react-router-dom";
 
 const SearchPage= () => {
+  const [query,setQuery]=useState("");
+  const filterBooks= query==="" ? [] : BookShelf.filter((c)=>c.title.toLowerCase().includes(query.toLowerCase()));
 
   return (
         <div className="search-books">
           <div className="search-books-bar">
             <link
-              className="close-search"
-              onClick={() => setShowSearchpage(!showSearchPage)}
-            >
+              className="close-search">
               Close
             </link>
             <div className="search-books-input-wrapper">
               <input
                 type="text"
                 placeholder="Search by title, author, or ISBN"
+                value={query}
+                onChange={(c) => setQuery(c.target.value)}
               />
             </div>
           </div>
           <div className="search-books-results">
-            <ol className="books-grid"></ol>
+            <ol className="books-grid">
+            {
+              filterBooks.map((book)=>(
+                <book key={book.id} book={book}/>
+
+              ))
+            }
+            </ol>
           </div>
         </div>
       ) ;
