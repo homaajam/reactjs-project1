@@ -1,4 +1,6 @@
 import {link} from "react-router-dom";
+import {useState} from "react";
+import Book from './book';
 
 const SearchPage= () => {
   const [query,setQuery]=useState("");
@@ -24,7 +26,7 @@ const SearchPage= () => {
             <ol className="books-grid">
             {
               filterBooks.map((book)=>(
-                <book key={book.id} book={book}/>
+                <Book key={book.id} book={book}/>
 
               ))
             }
