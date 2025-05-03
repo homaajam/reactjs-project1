@@ -2,9 +2,9 @@ import {link} from "react-router-dom";
 import {useState} from "react";
 import Book from './book';
 
-const SearchPage= () => {
+const SearchPage= ({books}) => {
   const [query,setQuery]=useState("");
-  const filterBooks= query==="" ? [] : BookShelf.filter((c)=>c.title.toLowerCase().includes(query.toLowerCase()));
+  const filterBooks= query==="" ? [] : books.filter((c)=>c.title.toLowerCase().includes(query.toLowerCase()));
 
   return (
         <div className="search-books">
