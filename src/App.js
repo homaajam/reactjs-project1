@@ -36,6 +36,15 @@ const App =()=>{
     },
   ]);
 
+  const uplateShelf=(bookId,newShelf)=>{
+
+    setBooks((Books) =>
+      Books.map((book) =>
+        book.id === bookId ? { ...book,shelf: newShelf}: book
+    ));
+    
+  };
+
   return (
     <Routes>
       <Route 
