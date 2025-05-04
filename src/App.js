@@ -1,7 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import {Routes, Route} from "react-router-dom";
-
+import BookList from "./components/bookList";
+import SearchPage from "./components/searchPage";
 
 const App =()=>{
 
@@ -11,12 +12,15 @@ const App =()=>{
         exact
         Path='/'
         element={
+          <BookList books={Books} />
           
         }
         />
         <Route
          path='/search'
-         element={}
+         element={
+          <SearchPage books={Books}/>
+         }
          />
 
     </Routes>
