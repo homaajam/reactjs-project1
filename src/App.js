@@ -46,11 +46,15 @@ const App =()=>{
   },[]);
 
   const updateShelf=(bookId,newShelf)=>{
-
-    setBooks((Books) =>
-      Books.map((book) =>
-        book.id === bookId ? { ...book,shelf: newShelf}: book
-    ));
+    const targetBook=Books.find((b) => b.id === bookId);
+    BooksAPI.update({ targetBook, newShelf)
+      .then(()=>{
+        setBooks((Books) =>
+          Books.map((book) =>
+            book.id === bookId ? { ...book,shelf: newShelf}: book
+        ));}
+      )
+    
     
   };
 
