@@ -1,5 +1,5 @@
 import Book from './book';
-const BookShelf=({title ,books})=>{
+const BookShelf=({title ,books,updateShelf})=>{
 
   return(
     <div className="bookshelf">
@@ -7,7 +7,7 @@ const BookShelf=({title ,books})=>{
         <div className="bookshelf-books">
           <ol className="books-grid">
             {books.map((book)=>{
-              <Book key={book.id} book={book} />
+              <Book key={book.id} book={book} updateShelf={updateShelf} />
             })}
           
           </ol>
