@@ -1,8 +1,9 @@
 import "./App.css";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
 import BookList from "./components/bookList";
 import SearchPage from "./components/searchPage";
+import * as BooksAPI from "./utils/BooksAPI";
 
 const App =()=>{
   const [Books , setBooks]= useState([
@@ -35,6 +36,14 @@ const App =()=>{
       shelf: "read",
     },
   ]);
+  
+  useEffect(()=>{
+    const getBooks=async ()=>{
+      const res=await BooksAPI.getAll();
+      setBooks(res);
+    };
+    getBooks();
+  },[]);
 
   const updateShelf=(bookId,newShelf)=>{
 
