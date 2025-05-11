@@ -36,7 +36,7 @@ const App =()=>{
     },
   ]);
 
-  const uplateShelf=(bookId,newShelf)=>{
+  const updateShelf=(bookId,newShelf)=>{
 
     setBooks((Books) =>
       Books.map((book) =>
@@ -51,16 +51,16 @@ const App =()=>{
         exact
         Path='/'
         element={
-          <BookList books={Books} />
+          <BookList books={Books} updateShelf={updateShelf} />
           
         }
         />
-        <Route
+      <Route
          path='/search'
          element={
           <SearchPage books={Books}/>
          }
-         />
+        />
 
     </Routes>
   );
