@@ -1,4 +1,8 @@
-const Book=({book})=>{
+const Book=({book,updateShelf})=>{
+  const handleChange =(event)=>{
+    updateShelf(book.id, event.target.value);
+
+  }
   
   return(
   <li>
@@ -14,7 +18,7 @@ const Book=({book})=>{
           }}
         ></div>
         <div className="book-shelf-changer">
-          <select>
+          <select value={book.shelf} onChange={handleChange}>
             <option value="none" disabled>
               Move to...
             </option>
