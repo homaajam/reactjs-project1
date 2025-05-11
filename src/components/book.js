@@ -14,7 +14,7 @@ const Book=({book,updateShelf})=>{
             width: 128,
             height: 193,
             backgroundImage:
-              'url(${book.image})',
+              `url(${book.image})`,
           }}
         ></div>
         <div className="book-shelf-changer">
