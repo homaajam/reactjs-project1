@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {useState} from "react";
 import Book from './book';
 
-const SearchPage= ({books}) => {
+const SearchPage= ({books, updateShelf}) => {
   const [query,setQuery]=useState("");
   const filterBooks= query==="" ? [] : books.filter((c)=>c.title.toLowerCase().includes(query.toLowerCase()));
 
@@ -27,7 +27,7 @@ const SearchPage= ({books}) => {
             <ol className="books-grid">
             {
               filterBooks.map((book)=>(
-                <Book key={book.id} book={book}/>
+                <Book key={book.id} book={book} updateShelf={updateShelf}/>
 
               ))
             }

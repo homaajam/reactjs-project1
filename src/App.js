@@ -43,7 +43,7 @@ const App =()=>{
       <Route
          path="/search"
          element={
-          <SearchPage books={Books}/>
+          <SearchPage books={Books} updateShelf={updateShelf}/>
          }
         />
 
