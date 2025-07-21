@@ -10,6 +10,7 @@ const SearchPage= ({books}) => {
         <div className="search-books">
           <div className="search-books-bar">
             <link
+              to='/'
               className="close-search">
               Close
             </link>
