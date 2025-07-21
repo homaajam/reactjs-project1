@@ -1,5 +1,5 @@
 import BookShelf from "./bookShelf";
-import {link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 const BookList=({books,updateShelf})=>{
@@ -21,7 +21,7 @@ const BookList=({books,updateShelf})=>{
         />
       </div>
       <div className="open-search">
-        <link to="/search">Add a book</link>
+        <Link to="/search">Add a book</Link>
       </div>
     </div>
   )

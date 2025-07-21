@@ -34,7 +34,7 @@ const App =()=>{
     <Routes>
       <Route 
         exact
-        Path="/"
+        path="/"
         element={
           <BookList books={Books} updateShelf={updateShelf} />
           

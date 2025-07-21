@@ -1,4 +1,4 @@
-import {link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import {useState} from "react";
 import Book from './book';
 
@@ -9,11 +9,11 @@ const SearchPage= ({books}) => {
   return (
         <div className="search-books">
           <div className="search-books-bar">
-            <link
-              to='/'
+            <Link
+              to="/"
               className="close-search">
               Close
-            </link>
+            </Link>
             <div className="search-books-input-wrapper">
               <input
                 type="text"
