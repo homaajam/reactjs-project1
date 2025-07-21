@@ -11,12 +11,12 @@ const BookList=({books,updateShelf})=>{
       </div>
       <div className="list-books-content">
         <BookShelf title={"Currently Reading"} books={
-          books.filter((book)=> book.shelf === "Currently Reading")} updateShelf={updateShelf}
+          books.filter((book)=> book.shelf === "currentlyReading")} updateShelf={updateShelf}
         />
         <BookShelf title={"Want to Read"} books={
-          books.filter((book)=> book.shelf === "Want to Read")} updateShelf={updateShelf}
+          books.filter((book)=> book.shelf === "wantToRead")} updateShelf={updateShelf}
         />
-        <BookShelf title={"read"} books={
+        <BookShelf title={"Read"} books={
           books.filter((book)=> book.shelf === "read")} updateShelf={updateShelf}
         />
       </div>
